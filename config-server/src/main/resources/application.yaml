@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: D:\it214\session7\bai5\application-config
+  profiles:
+    active: native
+server:
+  port: 8888

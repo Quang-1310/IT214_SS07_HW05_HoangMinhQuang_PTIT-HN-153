@@ -1,0 +1,17 @@
+package org.example.accountservice.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
+public class Account {
+    private Long accountId;
+    private Long customerId;
+    private String email;
+    private String password;
+}

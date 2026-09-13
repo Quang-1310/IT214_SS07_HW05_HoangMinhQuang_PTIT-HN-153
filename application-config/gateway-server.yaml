@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: account-service
+              uri: lb://account-service
+              predicates:
+                - Path=/account/**
+              filters:
+                - StripPrefix=1
+
+            - id: customer-service
+              uri: lb://customer-service
+              predicates:
+                - Path=/customer/**
+              filters:
+                - StripPrefix=1
+
+            - id: loan-service
+              uri: lb://loan-service
+              predicates:
+                - Path=/loan/**
+              filters:
+                - StripPrefix=1
+server:
+  port: 8080
